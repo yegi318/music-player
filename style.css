@@ -1,0 +1,118 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #ffffff, #ffc5db);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.player {
+  background-color: #ffeef6;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.3);
+  padding: 20px;
+  width: 90%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.cover-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 8px #fff, 0 0 20px rgba(255,150,200,0.5);
+
+  animation: spin 6s linear infinite;
+  animation-play-state: paused;
+  position: relative;
+  z-index: 1;
+}
+
+h3 {
+  color: #ff6fae;
+  margin: -5px 15px 15px;
+  font-weight: bold;
+}
+
+audio {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #ffc7de;
+  box-shadow: 0 0 3px 3px white inset;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #ff9ec5;
+  transform: scale(1.05);
+}
+
+.cd {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+}
+
+.cd::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 60%;
+  height: 40%;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.8),
+    rgba(255,255,255,0.2),
+    rgba(255,255,255,0)
+  );
+
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+
+.cd::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 5px #ccc;
+  z-index: 2;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
