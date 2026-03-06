@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;                /* 버튼 사이 간격 */
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(180deg, #ffffff, #ffc5db);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    button {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 20px;
+      background: #ffc7de;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255,150,200,0.4);
+      width: 220px;             /* 버튼 너비 통일 */
+    }
+    button:hover { background: #ff9ec5; }
+  </style>
+</head>
+<body>
+  <button onclick="openPlayer()">MY PLAYLIST</button>
+  <button onclick="openINSTA()">INSTAGRAM</button>
+  <button onclick="openNotion()">NOTION</button>
+
+  <script>
+    function openPlayer() {
+      window.open(
+        'index.html',
+        '_blank',
+        'width=430,height=620,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no'
+      );
+    }
+    function openINSTA() {
+      window.open('https://www.instagram.com/nongchive?igsh=MTRlZWN5cjlobmZkcg%3D%3D&utm_source=qr');
+    }
+    function openNotion() {
+      window.open('https://www.notion.so/PORTFOLIO-31ac3fa384cd804990e4d2b3afdb9b87?pvs=12');
+    }
+  </script>
+</body>
+</html>

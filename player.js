@@ -18,11 +18,25 @@ const songs = [
 
 let currentIndex = 0;
 
+// ✅ 플레이리스트 목록 생성
+function renderPlaylist() {
+  const list = document.getElementById("playlist-list");
+  list.innerHTML = "";
+  songs.forEach((song, index) => {
+    const li = document.createElement("li");
+    li.textContent = song.title;
+    li.onclick = () => { currentIndex = index; loadSong(currentIndex); };
+    if (index === currentIndex) li.classList.add("active");
+    list.appendChild(li);
+  });
+}
+
 function loadSong(index) {
   document.getElementById("title").textContent = songs[index].title;
   document.getElementById("audio").src = songs[index].file;
   document.getElementById("cover").src = songs[index].cover;
   document.getElementById("audio").play();
+  renderPlaylist(); // ✅ 강조 업데이트
 }
 
 function nextSong() {
@@ -36,6 +50,7 @@ function prevSong() {
 }
 
 loadSong(currentIndex);
+renderPlaylist();
 document.getElementById("audio").onended = nextSong;
 
 const audio = document.getElementById("audio");
