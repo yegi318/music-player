@@ -5,15 +5,27 @@
   <style>
     body {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 12px;                /* 버튼 사이 간격 */
       height: 100vh;
       margin: 0;
       background: linear-gradient(180deg, #ffffff, #ffc5db);
       font-family: 'Segoe UI', sans-serif;
     }
+
+    .wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 60px;
+    }
+
+    /* 왼쪽 버튼 영역 */
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
     button {
       padding: 15px 30px;
       border: none;
@@ -24,15 +36,68 @@
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(255,150,200,0.4);
-      width: 220px;             /* 버튼 너비 통일 */
+      width: 220px;
     }
     button:hover { background: #ff9ec5; }
+
+    /* 오른쪽 프로필 영역 — 버튼 3개와 동일한 높이로 맞춤 */
+    /* 버튼 3개: padding*2(30) + fontsize(~21) = 51px * 3 + gap(12) * 2 = 177px */
+    .profile {
+      height: 177px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+    }
+
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 3px solid #ffb3ce;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: rgba(255,255,255,0.5);
+    }
+
+    .profile-img svg {
+      width: 50px;
+      height: 50px;
+      opacity: 0.4;
+      color: #e07a9a;
+    }
+
+    .profile-name {
+      font-size: 15px;
+      font-weight: bold;
+      color: #c0607a;
+      letter-spacing: 0.05em;
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body>
-  <button onclick="openPlayer()">MY PLAYLIST</button>
-  <button onclick="openINSTA()">INSTAGRAM</button>
-  <button onclick="openNotion()">NOTION</button>
+
+  <div class="wrapper">
+
+    <!-- 왼쪽: 버튼들 -->
+    <div class="buttons">
+      <button onclick="openPlayer()">MY PLAYLIST</button>
+      <button onclick="openINSTA()">INSTAGRAM</button>
+      <button onclick="openNotion()">NOTION</button>
+    </div>
+
+    <!-- 오른쪽: 프로필 -->
+    <div class="profile">
+      <img class="profile-img" src="USAGI.jpg" alt="프로필">
+      <p class="profile-name">YERIM</p>
+    </div>
+
+  </div>
 
   <script>
     function openPlayer() {
