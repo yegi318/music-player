@@ -1,81 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-
-<style>
-
-body{
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
-gap:15px;
-
-background:linear-gradient(180deg,#ffffff,#ffc5db);
-font-family:'Segoe UI',sans-serif;
-}
-
-button{
-
-width:220px;
-padding:15px;
-
-border:none;
-border-radius:20px;
-
-background:#ffc7de;
-color:white;
-font-size:16px;
-font-weight:bold;
-
-cursor:pointer;
-
-box-shadow:0 4px 12px rgba(255,150,200,0.4);
-}
-
-button:hover{
-background:#ff9ec5;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <title>MY PLAYLIST</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
+    
+<div class="player">
 
-<button onclick="openPlayer()">MY PLAYLIST</button>
-<button onclick="openINSTA()">INSTAGRAM</button>
-<button onclick="openNotion()">NOTION</button>
+    <div class="cd">
+      <img id="cover" class="cover-img" src="" alt="앨범커버">
+    </div>
 
+      <h3 id="title"></h3>
+      <audio id="audio" controls></audio>
 
-<script>
+      <div class="controls">
+        <button onclick="prevSong()">◀</button>
+        <button onclick="nextSong()">▶</button>
+      </div>
 
-function openPlayer(){
+      <!-- ✅ 플레이리스트 추가 -->
+      <div class="playlist">
+        <ul id="playlist-list"></ul>
+      </div>
+      
+    </div>
 
-window.open(
-'player.html',
-'_blank',
-'width=430,height=620,resizable=no,scrollbars=no'
-)
-
-}
-
-function openINSTA(){
-
-window.open('https://www.instagram.com/nongchive')
-
-}
-
-function openNotion(){
-
-window.open('https://www.notion.so/PORTFOLIO')
-
-}
-
-</script>
-
+    <script src="player.js"></script>
 </body>
 </html>
